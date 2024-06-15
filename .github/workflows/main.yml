@@ -37,6 +37,12 @@ jobs:
           start: npm run test
           wait-on: 'http://localhost:8002'
 
+      - name: Archive Mochawesome report
+        uses: actions/upload-artifact@v2
+        with:
+          name: mochawesome-report
+          path: outputs
+
       - name: Shut Down Kong Manager
         run: |
           docker ps -a
