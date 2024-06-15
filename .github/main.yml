@@ -1,0 +1,44 @@
+name: End-to-end tests
+
+on:
+  push:
+    branches:
+      - main
+      
+  workflow_dispatch:
+    inputs:
+      tests:
+        description: 'tests'
+        type: string
+        required: false
+        default: ""
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set Up Kong Manager
+        run: |
+          docker -v
+          docker-compose -v
+          docker ps -a
+          docker-compose up -d
+          docker ps -a
+
+      - name: Run Cypresss tests
+        uses: cypress-io/github-action@v5
+        continue-on-error: true
+        env:
+          TESTS: ${{ inputs.tests }}
+        with:
+          start: npm run test
+          wait-on: 'http://localhost:8002'
+
+      - name: Shut Down Kong Manager
+        run: |
+          docker ps -a
+          docker-compose down 
+          docker ps -a

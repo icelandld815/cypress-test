@@ -1,0 +1,16 @@
+{
+  "name": "kong-homework-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "debug": "cypress open",
+    "test": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^13.11.0",
+    "mochawesome": "^7.1.3"
+  }
+}
