@@ -5,7 +5,7 @@ const RoutesPage = {
 import BasePage from "./base";
 export class Routes extends BasePage {
     add() {
-        ke.fromTAId(RoutesPage["New Route"][0]).click();
+        ke.fromTAId(RoutesPage["New Route"]).click();
     }
 
 }

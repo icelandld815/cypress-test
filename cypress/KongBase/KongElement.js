@@ -1,19 +1,21 @@
 export default class KongElement {
 
     static fromTAId(uatId) {
-        if (uatId instanceof Array) {
-            for (let i = 0; i < uatId.length; i++) {
-                console.log('uatId[i]', uatId[i]);
-                console.log('hello', Cypress.$(`[data-testid="${uatId[i]}"]`))
-
-                //Fixme: check if the element is existed
-                if (Cypress.$(`[data-testid="${uatId[i]}"]`).length > 0) {
-                    return cy.get(`[data-testid="${uatId[i]}"]`);
+        if(Array.isArray(uatId)){
+            return cy.get('body').then($el => {
+                for (let i = 0; i < uatId.length; i++) {
+                    if ($el.find(`[data-testid="${uatId[i]}"]`).length > 0) {
+                        return cy.wrap($el.find(`[data-testid="${uatId[i]}"]`));
+                    }
                 }
-            }
+                // If element not found, log and return null
+                cy.log('Element not found');
+                return null;
+            });
         } else {
             return cy.get(`[data-testid="${uatId}"]`);
         }
+        
     }
 
     static fromLabel(label) {

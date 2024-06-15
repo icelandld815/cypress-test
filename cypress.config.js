@@ -3,6 +3,11 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     baseUrl: 'http://localhost:8002',
+    env:{
+      adminUrl: 'http://localhost:8001',
+      clientUrl: 'http://localhost:8000',
+      repeatable: true
+    },
     reporter: 'mochawesome',
     reporterOptions: {
       reportDir: 'outputs',
@@ -16,7 +21,7 @@ module.exports = defineConfig({
   },
   env: {
     //config whether the execution can be reapeatable
-    repeatable: false
+    repeatable: true
   },
   "screenshotsFolder": "outputs/screenshots"
 

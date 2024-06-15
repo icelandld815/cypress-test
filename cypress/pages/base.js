@@ -16,7 +16,7 @@ export default class BasePage {
         ke.open(this.url)
     }
 
-    initData(data) {
+    loadData(data) {
         if (!data) {
             throw new Error('Data is required');
         }
