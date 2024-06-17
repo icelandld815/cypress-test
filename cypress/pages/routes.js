@@ -5,10 +5,16 @@ const RoutesPage = {
 import BasePage from "./base";
 import ke from "../KongBase/KongElement";
 
-
 export class Routes extends BasePage {
     add() {
-        ke.fromTAId(RoutesPage["New Route"]).click();
+        cy.get('body').then($el => {
+            let $element = $el.find(`[data-testid="${RoutesPage["New Route"][1]}"]`);
+            if (!$element[0].hidden) {
+                ke.fromTAId(RoutesPage["New Route"][1]).click();
+            } else {
+                ke.fromTAId(RoutesPage["New Route"][0]).click();
+            }
+        });
     }
 
 }

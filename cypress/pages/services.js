@@ -11,7 +11,15 @@ import BasePage from "./base";
 export class Services extends BasePage {
 
     add() {
-        ke.fromTAId(ServicesPage["New Gateway Service"]).click()
+        // ke.fromTAId(ServicesPage["New Gateway Service"]).click()
+        cy.get('body').then($el => {
+            let $element = $el.find(`[data-testid="${ServicesPage["New Gateway Service"][1]}"]`);
+            if (!$element[0].hidden) {
+                ke.fromTAId(ServicesPage["New Gateway Service"][1]).click();
+            } else {
+                ke.fromTAId(ServicesPage["New Gateway Service"][0]).click();
+            }
+        });
     }
 
     filter(context) {

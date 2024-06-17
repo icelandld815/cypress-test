@@ -33,9 +33,6 @@ jobs:
         continue-on-error: true
         env:
           TESTS: ${{ inputs.tests }}
-        with:
-          wait-on: 'http://localhost:8002'
-          wait-on-timeout: 120
 
       - name: Archive Mochawesome report
         uses: actions/upload-artifact@v4
