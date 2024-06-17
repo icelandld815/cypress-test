@@ -6,7 +6,14 @@ Homework for kong test automation by cypress
 - 'service.cy.js' use UI to create the service from strach and add the route from the service directly.
 
 ## Execution
-- local : npm run test
+Please use Node.js 18.x, 20.x, 22.x and above and docker is required
+- local
+  ```
+  git clone https://github.com/icelandld815/homework-cypress.git
+  docker-compose up -d
+  npm install
+  npm run test
+  ```
 - CI:  [E2E TEST Workflow](https://github.com/icelandld815/kong-homework-cypress/actions/workflows/main.yml)
 - Report: use mochawesome
 
