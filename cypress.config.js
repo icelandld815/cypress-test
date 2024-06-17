@@ -6,6 +6,7 @@ module.exports = defineConfig({
     env:{
       adminUrl: 'http://localhost:8001',
       clientUrl: 'http://localhost:8000',
+      //config whether the execution can be reapeatable
       repeatable: true
     },
     reporter: 'mochawesome',
@@ -19,10 +20,5 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  env: {
-    //config whether the execution can be reapeatable
-    repeatable: true
-  },
   "screenshotsFolder": "outputs/screenshots"
-
 });

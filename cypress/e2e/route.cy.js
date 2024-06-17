@@ -21,15 +21,15 @@ describe('test for route creation', () => {
 		})
 	});
 
-	//add route with data from parameter
-	it('create route', () => {
-
-		//access route page
+	beforeEach(() => {
 		home.access();
 		home.openWS();
 		nav.navigate('Routes');
+	})
 
+	it('create route', () => {
 		routes.add();
+		//create route with data object
 		route.create({
 			name: "example_route",
 			service: service.id,
@@ -39,6 +39,7 @@ describe('test for route creation', () => {
 		});
 	})
 
+	//FIXME: this test works in local but not in CI, response as 404 in CI
 	it('check route works', () => {
 		if (routeName) {
 			const clientBase = `${Cypress.env('clientUrl')}`;

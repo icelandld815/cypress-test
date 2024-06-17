@@ -1,8 +1,10 @@
-import ke from "../KongBase/KongElement";
-
-// cypress/pages/BasePage.js
 export const ReapatAble = (() => Cypress.env('repeatable'))();
 
+import ke from "../KongBase/KongElement";
+
+/**
+ * BasePage, the base page for all page object
+ */
 export default class BasePage {
 
     constructor(url) {
@@ -15,12 +17,14 @@ export default class BasePage {
         }
         ke.open(this.url)
     }
-
+    /** Load data from fixture file or data object
+     * @param {*} data 
+     * @returns return as cypress chainable object
+     */
     loadData(data) {
         if (!data) {
             throw new Error('Data is required');
         }
-
         if (typeof (data) !== 'object' && data.includes('.json')) {
             return cy.fixture(data).then((fixtureData) => {
                 return fixtureData;

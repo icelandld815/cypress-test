@@ -1,9 +1,11 @@
-// import ke from "../widgets/KongElement";
-import BasePage from "./base";
-
 const HomePage = {
     defaultWorkspace: "workspace-link-default"
 }
+
+//-------------------Hompage-------------------//
+
+import ke from "../KongBase/KongElement";
+import BasePage from "./base";
 
 export class Home extends BasePage {
     constructor() {

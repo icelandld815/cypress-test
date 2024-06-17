@@ -7,14 +7,22 @@ const ServicesPage = {
     "Service-Row": "{serviceName}",
 }
 
+//-------------------ServicesPage-------------------//
+
 import BasePage from "./base";
+import ke from "../KongBase/KongElement";
+
 export class Services extends BasePage {
+    constructor(ws = 'default') {
+        super(`/${ws}/services`);
+    }
 
     add() {
         ke.fromTAId(ServicesPage["New Gateway Service"][1]).click();
+        //FIXME: How to handle there's services already exist
         // cy.get('body').then($el => {
         //     let $element = $el.find(`[data-testid="${ServicesPage["New Gateway Service"][1]}"]`);
-        //     if ($element.length >0 && $element.css('display')!=='None') {
+        //     if ($element.length >0 && $element.css('display')!=='none') {
         //         ke.fromTAId(ServicesPage["New Gateway Service"][1]).click();
         //     } else {
         //         ke.fromTAId(ServicesPage["New Gateway Service"][0]).click();
@@ -35,6 +43,7 @@ export class Services extends BasePage {
         ke.fromTAId(ServicesPage["Service-Row"].replace("{serviceName}", serviceName))
             .should('be.visible').first()
             .click();
+        cy.log('service is opened', serviceName)
     }
 
 }

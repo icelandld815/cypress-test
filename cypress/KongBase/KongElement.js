@@ -1,3 +1,6 @@
+/**
+ * KongElement, get the element by data-testid or aria-label which specified by Kong
+ */
 export default class KongElement {
 
     static fromTAId(uatId) {
