@@ -13,7 +13,7 @@ export class Routes extends BasePage {
     }
 
     add() {
-        ke.fromTAId(RoutesPage["New Route"][1]).click();
+        ke.fromTAId(RoutesPage["New Route"][0]).click();
 
         //FIXME: How to handle there's routes already exist
         // cy.get('body').then($el => {
