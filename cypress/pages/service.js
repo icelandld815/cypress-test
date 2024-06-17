@@ -17,7 +17,7 @@ export class Service extends BasePage {
                 serviceData.name = serviceData.name + randomNum(6);
             }
             Object.entries(serviceData).forEach(([key, value]) => {
-                cy.log(key, value);
+                console.log(key, value);
                 ke.fromTAId(ServiceForm[key]).type(value);
             });
             ke.fromTAId(ServiceForm["submit"]).click();

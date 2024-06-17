@@ -11,7 +11,7 @@ import BasePage from "./base";
 export class Services extends BasePage {
 
     add() {
-        ke.fromTAId(ServicesPage["New Gateway Service"][0]).click()
+        ke.fromTAId(ServicesPage["New Gateway Service"]).click()
     }
 
     filter(context) {

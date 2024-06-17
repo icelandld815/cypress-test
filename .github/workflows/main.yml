@@ -34,7 +34,6 @@ jobs:
         env:
           TESTS: ${{ inputs.tests }}
         with:
-          start: npm run test
           wait-on: 'http://localhost:8002'
 
       - name: Archive Mochawesome report

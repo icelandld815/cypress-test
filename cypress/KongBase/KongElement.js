@@ -6,11 +6,12 @@ export default class KongElement {
                 for (let i = 0; i < uatId.length; i++) {
                     if ($el.find(`[data-testid="${uatId[i]}"]`).length > 0) {
                         return cy.wrap($el.find(`[data-testid="${uatId[i]}"]`));
+                    } else {
+                        console.warn(`Element with data-testid ${uatId[i]} not found`);
                     }
                 }
                 // If element not found, log and return null
-                cy.log('Element not found');
-                return null;
+                throw new Error(`Element with data-testid ${uatId} not found`);
             });
         } else {
             return cy.get(`[data-testid="${uatId}"]`);
