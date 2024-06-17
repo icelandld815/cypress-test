@@ -17,7 +17,7 @@ export class Service extends BasePage {
                 serviceData.name = serviceData.name + randomNum(6);
             }
             Object.entries(serviceData).forEach(([key, value]) => {
-                console.log(key, value);
+                cy.log(key, value);
                 ke.fromTAId(ServiceForm[key]).type(value);
             });
             ke.fromTAId(ServiceForm["submit"]).click();
@@ -28,7 +28,7 @@ export class Service extends BasePage {
     }
 
     addRoute(data) {
-        console.log('add route', data);
+        cy.log('add route', data);
         cy.get('.add-route-btn').click();
         if (data) {
             route.create(data);

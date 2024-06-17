@@ -21,13 +21,14 @@ describe('test for route creation', () => {
 		})
 	});
 
-	beforeEach(() => {
+	//add route with data from parameter
+	it('create route', () => {
+
+		//access route page
 		home.access();
 		home.openWS();
 		nav.navigate('Routes');
-	})
 
-	it('create route', () => {
 		routes.add();
 		route.create({
 			name: "example_route",
@@ -41,7 +42,7 @@ describe('test for route creation', () => {
 	it('check route works', () => {
 		if (routeName) {
 			const clientBase = `${Cypress.env('clientUrl')}`;
-			cy.visit(`${clientBase}/mock/anything`);
+			cy.visit(`${clientBase}/mock`);
 			cy.get('body').should('contain', 'httpbin.org');
 		} else {
 			throw new Error('route creation failed');

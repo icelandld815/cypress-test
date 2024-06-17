@@ -17,7 +17,7 @@ export class Route extends BasePage {
             }
 
             Object.entries(route).forEach(([key, value]) => {
-                console.log(key, value);
+                cy.log(key, value);
                 if (key === 'service') {
                     ke.fromTAId(RouteForm["service"]).click();
                     ke.fromTAId(RouteForm["service-select"].replace("{serviceId}", value)).click();
