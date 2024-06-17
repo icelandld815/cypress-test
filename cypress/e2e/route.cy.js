@@ -44,7 +44,7 @@ describe('test for route creation', () => {
 			cy.visit(`${clientBase}/mock`);
 			cy.get('body').should('contain', 'httpbin.org');
 		} else {
-			throw new ERROR('route creation failed');
+			throw new Error('route creation failed');
 		}
 	})
 

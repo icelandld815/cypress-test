@@ -8,6 +8,7 @@ export default class KongElement {
                         return cy.wrap($el.find(`[data-testid="${uatId[i]}"]`));
                     } else {
                         console.warn(`Element with data-testid ${uatId[i]} not found`);
+                        cy.log(`Element with data-testid ${uatId[i]} not found`);
                     }
                 }
                 // If element not found, log and return null

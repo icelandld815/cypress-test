@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set Up Kong Manager
         run: |
@@ -29,7 +29,7 @@ jobs:
           docker ps -a
 
       - name: Run Cypresss tests
-        uses: cypress-io/github-action@v5
+        uses: cypress-io/github-action@v6
         continue-on-error: true
         env:
           TESTS: ${{ inputs.tests }}
