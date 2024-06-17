@@ -12,6 +12,7 @@ Homework for kong test automation by cypress
 
 ## Design
 It aims to use the common page object design to interact with the page, each action support the data can be retived from outside file or as paramters.
+[Design](Design.png)
 
 ### Kong Element
 To enhance support for test automation, Kong Manager introduces the "data-testid" attribute as a standardized identifier for elements, aiding in easy element location during testing. By encapsulating the logic related to "data-testid" within a custom wrapper object named ke, several benefits can be achieved:
