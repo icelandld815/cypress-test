@@ -41,7 +41,7 @@ describe('test for route creation', () => {
 	it('check route works', () => {
 		if (routeName) {
 			const clientBase = `${Cypress.env('clientUrl')}`;
-			cy.visit(`${clientBase}/mock`);
+			cy.visit(`${clientBase}/mock/anything`);
 			cy.get('body').should('contain', 'httpbin.org');
 		} else {
 			throw new Error('route creation failed');
