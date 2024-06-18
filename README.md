@@ -9,7 +9,7 @@ Homework for kong test automation by cypress
 Please use Node.js 18.x, 20.x, 22.x and above and docker is required
 - local
   ```
-  git clone https://github.com/icelandld815/homework-cypress.git
+  git clone https://github.com/icelandld815/cypress-test.git
   docker-compose up -d
   npm install
   npm run test
