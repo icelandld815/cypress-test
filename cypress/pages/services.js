@@ -18,8 +18,10 @@ export class Services extends BasePage {
     }
 
     add() {
-        ke.fromTAId(ServicesPage["New Gateway Service"][1]).click();
-        //FIXME: How to handle there's services already exist
+        //FIXME: How to handle there's services already exist without waiting
+        cy.wait(1000);
+        ke.fromTAId(ServicesPage["New Gateway Service"]).click();
+       
         // cy.get('body').then($el => {
         //     let $element = $el.find(`[data-testid="${ServicesPage["New Gateway Service"][1]}"]`);
         //     if ($element.length >0 && $element.css('display')!=='none') {
