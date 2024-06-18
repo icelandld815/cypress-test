@@ -39,9 +39,10 @@ describe('test for route creation', () => {
 		});
 	})
 
-	//FIXME: this test works in local but not in CI, response as 404 in CI
 	it('check route works', () => {
 		if (routeName) {
+			//FIXME: wait for the routing to take effect
+			cy.wait(1000);
 			const clientBase = `${Cypress.env('clientUrl')}`;
 			cy.visit(`${clientBase}/mock`);
 			cy.get('body').should('contain', 'httpbin.org');
