@@ -23,7 +23,7 @@ export default class KongElement {
         
     }
 
-    static fromLabel(label) {
+    static fromLabe(label) {
         return cy.get(`[aria-label="${label}"]`);
     }
 
