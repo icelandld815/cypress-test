@@ -1,5 +1,5 @@
-# kong-homework-cypress
-Homework for kong test automation by cypress
+# homework-cypress
+Homework for test automation by cypress
 
 ## Test Cases
 - 'route.cy.js' use API to create the service as data precodntion and create the route from the routes list and link this service
