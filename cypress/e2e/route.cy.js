@@ -14,7 +14,7 @@ describe('test for route creation', () => {
 	// use API to create a service as data preparetion
 	before(() => {
 		apiSerivce.create({
-			name: "sample_service" + randomNum(6),
+			name: "sample_service",
 			url: "http://httpbin.org"
 		}).then((result) => {
 			service = result;
